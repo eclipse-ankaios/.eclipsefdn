@@ -32,6 +32,9 @@ orgs.newOrg('eclipse-ankaios') {
         "containers",
         "orchestration"
       ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main'),
+      ],
       web_commit_signoff_required: false,
       environments: [
         orgs.newEnvironment('github-pages') {
