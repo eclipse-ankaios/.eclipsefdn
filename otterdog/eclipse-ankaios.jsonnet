@@ -28,6 +28,20 @@ orgs.newOrg('eclipse-ankaios') {
         "containers",
         "orchestration"
       ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          requires_pull_request: true,
+          required_approving_review_count: 1,
+          require_last_push_approval: true,
+          required_status_checks+: [
+            "Test and Build Linux amd64",
+            "Build Linux arm64",
+            "Build Requirements Tracing",
+            "Verify PR Task List"
+          ],
+          requires_conversation_resolution: true,
+        },
+      ],
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
