@@ -33,11 +33,11 @@ orgs.newOrg('eclipse-ankaios') {
           requires_pull_request: true,
           required_approving_review_count: 1,
           required_status_checks+: [
-            "Test and Build Linux amd64",
+            "Test and build Linux amd64",
             "Build Linux arm64",
-            "Build Requirements Tracing",
-            "Verify PR Task List",
-            "Deploy Documentation"
+            "Build requirements tracing",
+            "Deploy documentation"
+            "Verify PR Task List"
           ],
           requires_conversation_resolution: true,
         },
