@@ -22,6 +22,7 @@ orgs.newOrg('eclipse-ankaios') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      has_discussions: true,
       homepage: "https://eclipse-ankaios.github.io/ankaios/",
       topics+: [
         "automotive",
