@@ -38,8 +38,7 @@ orgs.newOrg('eclipse-ankaios') {
             "Build Linux arm64",
             "Build requirements tracing",
             "Deploy documentation",
-            "Check if documentation has changed",
-            "Verify PR Task List",
+            "Check if documentation has changed"
           ],
           requires_conversation_resolution: true,
         },
