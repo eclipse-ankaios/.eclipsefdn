@@ -27,24 +27,20 @@ orgs.newOrg('eclipse-ankaios') {
         "containers",
         "orchestration"
       ],
+      web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          requires_pull_request: true,
           required_approving_review_count: 1,
           required_status_checks+: [
-            "Test and build Linux amd64",
             "Build Linux arm64",
             "Build requirements tracing",
+            "Check if documentation has changed",
             "Deploy documentation",
-            "Check if documentation has changed"
+            "Test and build Linux amd64"
           ],
           requires_conversation_resolution: true,
         },
       ],
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
