@@ -24,7 +24,8 @@ orgs.newOrg('eclipse-ankaios') {
       topics+: [
         "automotive",
         "containers",
-        "orchestration"
+        "orchestration",
+        "ankaios",
       ],
       web_commit_signoff_required: false,
       branch_protection_rules: [
