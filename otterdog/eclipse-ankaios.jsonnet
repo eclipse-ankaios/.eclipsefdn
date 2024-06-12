@@ -32,11 +32,13 @@ orgs.newOrg('eclipse-ankaios') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           required_status_checks+: [
-            "Build Linux arm64",
+            "Build and run system tests Linux amd64",
+            "Run unit tests Linux amd64",
+            "Build Linux amd64 debian package",
+            "Build Linux arm64 debian package",
             "Build requirements tracing",
             "Check if documentation has changed",
             "Deploy documentation",
-            "Test and build Linux amd64"
           ],
           requires_conversation_resolution: true,
         },
