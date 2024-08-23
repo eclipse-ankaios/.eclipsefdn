@@ -41,6 +41,19 @@ orgs.newOrg('eclipse-ankaios') {
           ],
           requires_conversation_resolution: true,
         },
+        orgs.newBranchProtectionRule('release-**') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+            "Build and run system tests Linux amd64",
+            "Run unit tests Linux amd64",
+            "Build Linux amd64 debian package",
+            "Build Linux arm64 debian package",
+            "Build requirements tracing",
+            "Check if documentation has changed",
+            "Deploy documentation",
+          ],
+          requires_conversation_resolution: true,
+        },
       ],
       environments: [
         orgs.newEnvironment('github-pages') {
