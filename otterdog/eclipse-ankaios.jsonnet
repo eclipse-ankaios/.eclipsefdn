@@ -79,7 +79,7 @@ orgs.newOrg('eclipse-ankaios') {
         "containers",
         "orchestration",
         "ankaios",
-		"sdk",
+        "sdk",
       ],
       web_commit_signoff_required: false,
       environments: [
