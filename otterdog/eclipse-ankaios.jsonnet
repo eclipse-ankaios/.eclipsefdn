@@ -68,7 +68,7 @@ orgs.newOrg('eclipse-ankaios') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "Eclipse Ankaios Python SDK provides a convenient python interface for interacting with the Ankaios platform.",
+      description: "Eclipse Ankaios Python SDK - provides a convenient Python interface for interacting with the Ankaios platform.",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
@@ -80,6 +80,35 @@ orgs.newOrg('eclipse-ankaios') {
         "orchestration",
         "ankaios",
         "sdk",
+        "python",
+      ],
+      web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
+    orgs.newRepo('ank-sdk-rust') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "Eclipse Ankaios Rust SDK - provides a convenient Rust interface for interacting with the Ankaios platform.",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      homepage: "https://eclipse-ankaios.github.io/ank-sdk-rust/",
+      topics+: [
+        "automotive",
+        "containers",
+        "orchestration",
+        "ankaios",
+        "sdk",
+        "rust",
       ],
       web_commit_signoff_required: false,
       environments: [
