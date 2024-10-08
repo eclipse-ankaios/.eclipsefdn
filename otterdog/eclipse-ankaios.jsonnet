@@ -83,6 +83,20 @@ orgs.newOrg('eclipse-ankaios') {
         "python",
       ],
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+          ],
+          requires_conversation_resolution: true,
+        },
+        orgs.newBranchProtectionRule('release-**') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+          ],
+          requires_conversation_resolution: true,
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -111,6 +125,20 @@ orgs.newOrg('eclipse-ankaios') {
         "rust",
       ],
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+          ],
+          requires_conversation_resolution: true,
+        },
+        orgs.newBranchProtectionRule('release-**') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+          ],
+          requires_conversation_resolution: true,
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
