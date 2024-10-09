@@ -27,9 +27,17 @@ orgs.newOrg('eclipse-ankaios') {
         "ankaios",
       ],
       web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
+      rulesets: [
+        orgs.newRepoRuleset('main_release_protection') {
+          include_refs+: [
+            "~DEFAULT_BRANCH",
+            "refs/heads/release-**",
+          ],
+          required_pull_request+: {
+            required_approving_review_count: "1",
+            requires_review_thread_resolution: true
+          },
+          allows_deletions: false,
           required_status_checks+: [
             "Build and run system tests Linux amd64",
             "Run unit tests Linux amd64",
@@ -39,20 +47,6 @@ orgs.newOrg('eclipse-ankaios') {
             "Check if documentation has changed",
             "Deploy documentation",
           ],
-          requires_conversation_resolution: true,
-        },
-        orgs.newBranchProtectionRule('release-**') {
-          required_approving_review_count: 1,
-          required_status_checks+: [
-            "Build and run system tests Linux amd64",
-            "Run unit tests Linux amd64",
-            "Build Linux amd64 debian package",
-            "Build Linux arm64 debian package",
-            "Build requirements tracing",
-            "Check if documentation has changed",
-            "Deploy documentation",
-          ],
-          requires_conversation_resolution: true,
         },
       ],
       environments: [
@@ -83,18 +77,19 @@ orgs.newOrg('eclipse-ankaios') {
         "python",
       ],
       web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
+      rulesets: [
+        orgs.newRepoRuleset('main_release_protection') {
+          include_refs+: [
+            "~DEFAULT_BRANCH",
+            "refs/heads/release-**",
+          ],
+          required_pull_request+: {
+            required_approving_review_count: "1",
+            requires_review_thread_resolution: true
+          },
+          allows_deletions: false,
           required_status_checks+: [
           ],
-          requires_conversation_resolution: true,
-        },
-        orgs.newBranchProtectionRule('release-**') {
-          required_approving_review_count: 1,
-          required_status_checks+: [
-          ],
-          requires_conversation_resolution: true,
         },
       ],
       environments: [
@@ -125,26 +120,19 @@ orgs.newOrg('eclipse-ankaios') {
         "rust",
       ],
       web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
+      rulesets: [
+        orgs.newRepoRuleset('main_release_protection') {
+          include_refs+: [
+            "~DEFAULT_BRANCH",
+            "refs/heads/release-**",
+          ],
+          required_pull_request+: {
+            required_approving_review_count: "1",
+            requires_review_thread_resolution: true
+          },
+          allows_deletions: false,
           required_status_checks+: [
           ],
-          requires_conversation_resolution: true,
-        },
-        orgs.newBranchProtectionRule('release-**') {
-          required_approving_review_count: 1,
-          required_status_checks+: [
-          ],
-          requires_conversation_resolution: true,
-        },
-      ],
-      environments: [
-        orgs.newEnvironment('github-pages') {
-          branch_policies+: [
-            "gh-pages"
-          ],
-          deployment_branch_policy: "selected",
         },
       ],
     },
