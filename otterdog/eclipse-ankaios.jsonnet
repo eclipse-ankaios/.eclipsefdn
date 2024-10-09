@@ -38,15 +38,17 @@ orgs.newOrg('eclipse-ankaios') {
             requires_review_thread_resolution: true
           },
           allows_deletions: false,
-          required_status_checks+: [
-            "Build and run system tests Linux amd64",
-            "Run unit tests Linux amd64",
-            "Build Linux amd64 debian package",
-            "Build Linux arm64 debian package",
-            "Build requirements tracing",
-            "Check if documentation has changed",
-            "Deploy documentation",
-          ],
+          required_status_checks+: {
+            status_checks+: [
+              "Build and run system tests Linux amd64",
+              "Run unit tests Linux amd64",
+              "Build Linux amd64 debian package",
+              "Build Linux arm64 debian package",
+              "Build requirements tracing",
+              "Check if documentation has changed",
+              "Deploy documentation",
+            ],
+          },
         },
       ],
       environments: [
@@ -88,8 +90,6 @@ orgs.newOrg('eclipse-ankaios') {
             requires_review_thread_resolution: true
           },
           allows_deletions: false,
-          required_status_checks+: [
-          ],
         },
       ],
       environments: [
@@ -131,8 +131,6 @@ orgs.newOrg('eclipse-ankaios') {
             requires_review_thread_resolution: true
           },
           allows_deletions: false,
-          required_status_checks+: [
-          ],
         },
       ],
     },
