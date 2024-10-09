@@ -34,7 +34,7 @@ orgs.newOrg('eclipse-ankaios') {
             "refs/heads/release-**",
           ],
           required_pull_request+: {
-            required_approving_review_count: "1",
+            required_approving_review_count: 1,
             requires_review_thread_resolution: true
           },
           allows_deletions: false,
@@ -86,7 +86,7 @@ orgs.newOrg('eclipse-ankaios') {
             "refs/heads/release-**",
           ],
           required_pull_request+: {
-            required_approving_review_count: "1",
+            required_approving_review_count: 1,
             requires_review_thread_resolution: true
           },
           allows_deletions: false,
@@ -127,7 +127,7 @@ orgs.newOrg('eclipse-ankaios') {
             "refs/heads/release-**",
           ],
           required_pull_request+: {
-            required_approving_review_count: "1",
+            required_approving_review_count: 1,
             requires_review_thread_resolution: true
           },
           allows_deletions: false,
