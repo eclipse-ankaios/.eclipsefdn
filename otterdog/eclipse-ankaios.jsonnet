@@ -27,32 +27,30 @@ orgs.newOrg('eclipse-ankaios') {
         "ankaios",
       ],
       web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
-          required_status_checks+: [
-            "Build and run system tests Linux amd64",
-            "Run unit tests Linux amd64",
-            "Build Linux amd64 debian package",
-            "Build Linux arm64 debian package",
-            "Build requirements tracing",
-            "Check if documentation has changed",
-            "Deploy documentation",
+      rulesets: [
+        orgs.newRepoRuleset('main_release_protection') {
+          include_refs+: [
+            "~DEFAULT_BRANCH",
+            "refs/heads/release-**",
           ],
-          requires_conversation_resolution: true,
-        },
-        orgs.newBranchProtectionRule('release-**') {
-          required_approving_review_count: 1,
-          required_status_checks+: [
-            "Build and run system tests Linux amd64",
-            "Run unit tests Linux amd64",
-            "Build Linux amd64 debian package",
-            "Build Linux arm64 debian package",
-            "Build requirements tracing",
-            "Check if documentation has changed",
-            "Deploy documentation",
-          ],
-          requires_conversation_resolution: true,
+          required_pull_request+: {
+            required_approving_review_count: 1,
+            requires_review_thread_resolution: true
+          },
+          allows_creations: true,
+          allows_deletions: false,
+          required_status_checks+: {
+            do_not_enforce_on_create: true,
+            status_checks+: [
+              "Build and run system tests Linux amd64",
+              "Run unit tests Linux amd64",
+              "Build Linux amd64 debian package",
+              "Build Linux arm64 debian package",
+              "Build requirements tracing",
+              "Check if documentation has changed",
+              "Deploy documentation",
+            ],
+          },
         },
       ],
       environments: [
@@ -83,6 +81,23 @@ orgs.newOrg('eclipse-ankaios') {
         "python",
       ],
       web_commit_signoff_required: false,
+      rulesets: [
+        orgs.newRepoRuleset('main_release_protection') {
+          include_refs+: [
+            "~DEFAULT_BRANCH",
+            "refs/heads/release-**",
+          ],
+          required_pull_request+: {
+            required_approving_review_count: 1,
+            requires_review_thread_resolution: true
+          },
+          required_status_checks+: {
+            do_not_enforce_on_create: true,
+          },
+          allows_creations: true,
+          allows_deletions: false,
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -111,12 +126,21 @@ orgs.newOrg('eclipse-ankaios') {
         "rust",
       ],
       web_commit_signoff_required: false,
-      environments: [
-        orgs.newEnvironment('github-pages') {
-          branch_policies+: [
-            "gh-pages"
+      rulesets: [
+        orgs.newRepoRuleset('main_release_protection') {
+          include_refs+: [
+            "~DEFAULT_BRANCH",
+            "refs/heads/release-**",
           ],
-          deployment_branch_policy: "selected",
+          required_pull_request+: {
+            required_approving_review_count: 1,
+            requires_review_thread_resolution: true
+          },
+          required_status_checks+: {
+            do_not_enforce_on_create: true,
+          },
+          allows_creations: true,
+          allows_deletions: false,
         },
       ],
     },
