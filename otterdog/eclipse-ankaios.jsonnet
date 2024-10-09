@@ -40,6 +40,7 @@ orgs.newOrg('eclipse-ankaios') {
           allows_creations: true,
           allows_deletions: false,
           required_status_checks+: {
+            do_not_enforce_on_create: true,
             status_checks+: [
               "Build and run system tests Linux amd64",
               "Run unit tests Linux amd64",
@@ -90,6 +91,9 @@ orgs.newOrg('eclipse-ankaios') {
             required_approving_review_count: 1,
             requires_review_thread_resolution: true
           },
+          required_status_checks+: {
+            do_not_enforce_on_create: true,
+          },
           allows_creations: true,
           allows_deletions: false,
         },
@@ -131,6 +135,9 @@ orgs.newOrg('eclipse-ankaios') {
           required_pull_request+: {
             required_approving_review_count: 1,
             requires_review_thread_resolution: true
+          },
+          required_status_checks+: {
+            do_not_enforce_on_create: true,
           },
           allows_creations: true,
           allows_deletions: false,
