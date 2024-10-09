@@ -37,6 +37,7 @@ orgs.newOrg('eclipse-ankaios') {
             required_approving_review_count: 1,
             requires_review_thread_resolution: true
           },
+          allows_creations: true,
           allows_deletions: false,
           required_status_checks+: {
             status_checks+: [
@@ -89,6 +90,7 @@ orgs.newOrg('eclipse-ankaios') {
             required_approving_review_count: 1,
             requires_review_thread_resolution: true
           },
+          allows_creations: true,
           allows_deletions: false,
         },
       ],
@@ -130,6 +132,7 @@ orgs.newOrg('eclipse-ankaios') {
             required_approving_review_count: 1,
             requires_review_thread_resolution: true
           },
+          allows_creations: true,
           allows_deletions: false,
         },
       ],
