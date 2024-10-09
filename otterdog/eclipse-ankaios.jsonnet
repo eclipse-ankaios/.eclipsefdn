@@ -27,6 +27,7 @@ orgs.newOrg('eclipse-ankaios') {
         "ankaios",
       ],
       web_commit_signoff_required: false,
+      private_vulnerability_reporting_enabled: true,
       rulesets: [
         orgs.newRepoRuleset('main_release_protection') {
           include_refs+: [
