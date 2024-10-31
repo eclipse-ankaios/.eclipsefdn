@@ -71,7 +71,7 @@ orgs.newOrg('eclipse-ankaios') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
-      has_discussions: true,
+      has_discussions: false,
       homepage: "https://eclipse-ankaios.github.io/ank-sdk-python/",
       topics+: [
         "automotive",
@@ -116,7 +116,7 @@ orgs.newOrg('eclipse-ankaios') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
-      has_discussions: true,
+      has_discussions: false,
       homepage: "https://eclipse-ankaios.github.io/ank-sdk-rust/",
       topics+: [
         "automotive",
