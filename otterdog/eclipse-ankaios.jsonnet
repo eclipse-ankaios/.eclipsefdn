@@ -15,9 +15,7 @@ orgs.newOrg('eclipse-ankaios') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "Eclipse Ankaios Python SDK - provides a convenient Python interface for interacting with the Ankaios platform.",
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "gh-pages",
-      gh_pages_source_path: "/",
+      gh_pages_build_type: "workflow",
       homepage: "https://eclipse-ankaios.github.io/ank-sdk-python/",
       topics+: [
         "ankaios",
@@ -47,7 +45,7 @@ orgs.newOrg('eclipse-ankaios') {
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
-            "gh-pages"
+            "main"
           ],
           deployment_branch_policy: "selected",
         },
