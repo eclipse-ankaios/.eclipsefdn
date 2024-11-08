@@ -51,7 +51,7 @@ orgs.newOrg('eclipse-ankaios') {
           ],
           deployment_branch_policy: "selected",
         },
-        orgs.newEnvironment('publish'),
+        orgs.newEnvironment('pypi'),
         orgs.newEnvironment('release'),
       ],
     },
