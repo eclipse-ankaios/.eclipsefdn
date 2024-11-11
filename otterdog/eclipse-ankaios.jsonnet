@@ -50,7 +50,6 @@ orgs.newOrg('eclipse-ankaios') {
           deployment_branch_policy: "selected",
         },
         orgs.newEnvironment('pypi'),
-        orgs.newEnvironment('release'),
       ],
     },
     orgs.newRepo('ank-sdk-rust') {
