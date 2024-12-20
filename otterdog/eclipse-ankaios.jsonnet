@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-ankaios') {
+orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
   settings+: {
     description: "",
     name: "Eclipse Ankaios",
