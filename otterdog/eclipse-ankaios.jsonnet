@@ -9,6 +9,11 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  secrets+: [        
+    orgs.newOrgSecret('CRATES_API_TOKEN') {
+      value: "pass:bots/automotive.ankaios/crates.io/api-token",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('ank-sdk-python') {
       allow_merge_commit: true,
@@ -111,6 +116,9 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
         "automotive",
         "containers",
         "orchestration"
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main'),
       ],
       web_commit_signoff_required: false,
       rulesets: [
