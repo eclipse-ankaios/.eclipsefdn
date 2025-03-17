@@ -117,11 +117,6 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
         "containers",
         "orchestration"
       ],
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
-        },
-      ],
       web_commit_signoff_required: false,
       rulesets: [
         orgs.newRepoRuleset('main_release_protection') {
