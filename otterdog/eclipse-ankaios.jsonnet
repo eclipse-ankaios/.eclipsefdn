@@ -65,7 +65,7 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
-      homepage: "https://eclipse-ankaios.github.io/ank-sdk-rust/",
+      homepage: "https://docs.rs/ankaios_sdk/latest/ankaios_sdk/",
       topics+: [
         "ankaios",
         "automotive",
