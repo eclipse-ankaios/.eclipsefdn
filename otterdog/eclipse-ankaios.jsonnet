@@ -51,7 +51,7 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
             "main",
-            "tag:v[0-9].[0-9].[0.9]"
+            "tag:v*"
           ],
           deployment_branch_policy: "selected",
         },
