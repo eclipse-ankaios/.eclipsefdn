@@ -124,7 +124,8 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
           allows_creations: true,
           include_refs+: [
             "refs/heads/release-**",
-            "~DEFAULT_BRANCH"
+            "~DEFAULT_BRANCH",
+            "refs/heads/feature/**"
           ],
           required_pull_request+: {
             required_approving_review_count: 1,
