@@ -105,7 +105,7 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "Eclipse Ankaios provides workload and container orchestration for automotive High Performance Computing (HPC) software.",
+      description: "Eclipse Ankaios provides workload and container orchestration for embedded devices like automotive HPCs.",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
@@ -124,7 +124,8 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
           allows_creations: true,
           include_refs+: [
             "refs/heads/release-**",
-            "~DEFAULT_BRANCH"
+            "~DEFAULT_BRANCH",
+            "refs/heads/feature/**"
           ],
           required_pull_request+: {
             required_approving_review_count: 1,
