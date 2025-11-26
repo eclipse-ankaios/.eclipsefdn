@@ -163,11 +163,7 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
             ],
           },
           bypass_actors+: [
-            {
-              actor_type: 'Team',
-              actor_id: 7841090,
-              bypass_mode: 'always'
-            }
+            "@eclipse-ankaios/automotive-ankaios-project-leads",
           ]
         },
       ],
