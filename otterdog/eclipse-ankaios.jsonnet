@@ -143,6 +143,29 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
             ],
           },
         },
+        orgs.newRepoRuleset('feature_branch_protection') {
+          allows_creations: true,
+          include_refs+: ["refs/heads/feature-**"],
+          required_pull_request+: {
+            required_approving_review_count: 1,
+            requires_review_thread_resolution: true,
+          },
+          required_status_checks+: {
+            do_not_enforce_on_create: true,
+            status_checks+: [
+              "Build Linux amd64 debian package",
+              "Build Linux arm64 debian package",
+              "Build and run system tests Linux amd64",
+              "Build requirements tracing",
+              "Check if documentation has changed",
+              "Deploy documentation",
+              "Run unit tests Linux amd64"
+            ],
+          },
+          bypass_actors+: [
+            "@eclipse-ankaios/automotive-ankaios-project-leads",
+          ]
+        },
       ],
       environments: [
         orgs.newEnvironment('github-pages') {
