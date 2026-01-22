@@ -145,7 +145,7 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
         },
         orgs.newRepoRuleset('feature_branch_protection') {
           allows_creations: true,
-          include_refs+: ["refs/heads/feature-**"],
+          include_refs+: ["refs/heads/feature/**"],
           required_pull_request+: {
             required_approving_review_count: 1,
             requires_review_thread_resolution: true,
