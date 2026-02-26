@@ -9,9 +9,18 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
-  secrets+: [        
+  secrets+: [
     orgs.newOrgSecret('CRATES_API_TOKEN') {
       value: "pass:bots/automotive.ankaios/crates.io/api-token",
+    },
+    orgs.newOrgSecret('GPG_KEY_ID') {
+      value: "pass:bots/automotive.ankaios/gpg/key_id",
+    },
+    orgs.newOrgSecret('GPG_PASSPHRASE') {
+      value: "pass:bots/automotive.ankaios/gpg/passphrase",
+    },
+    orgs.newOrgSecret('GPG_PRIVATE_KEY') {
+      value: "pass:bots/automotive.ankaios/gpg/secret-subkeys.asc",
     },
   ],
   _repositories+:: [
