@@ -23,10 +23,10 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
       value: "pass:bots/automotive.ankaios/gpg/secret-subkeys.asc",
     },
     orgs.newOrgSecret('REPO_TOKEN_USERNAME') {
-      value: "vault:bots/automotive.ankaios/repo.eclipse.org/token-username",
+      value: "vault:automotive.ankaios/repo.eclipse.org/token-username",
     },
     orgs.newOrgSecret('REPO_TOKEN_PASSWORD') {
-      value: "vault:bots/automotive.ankaios/repo.eclipse.org/token-password",
+      value: "vault:automotive.ankaios/repo.eclipse.org/token-password",
     },
   ],
   _repositories+:: [
