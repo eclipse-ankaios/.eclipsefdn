@@ -148,8 +148,8 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
           required_status_checks+: {
             do_not_enforce_on_create: true,
             status_checks+: [
-              "Build Linux amd64 debian package",
-              "Build Linux arm64 debian package",
+              "Build Linux amd64",
+              "Build Linux arm64",
               "Build and run system tests Linux amd64",
               "Build requirements tracing",
               "Check if documentation has changed",
@@ -168,8 +168,8 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
           required_status_checks+: {
             do_not_enforce_on_create: true,
             status_checks+: [
-              "Build Linux amd64 debian package",
-              "Build Linux arm64 debian package",
+              "Build Linux amd64",
+              "Build Linux arm64",
               "Build and run system tests Linux amd64",
               "Build requirements tracing",
               "Check if documentation has changed",
