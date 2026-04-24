@@ -191,6 +191,40 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
         },
       ],
     },
+    orgs.newRepo('meta-ankaios') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: true,
+      description: "Yocto example and metadata layer for binary installation of Eclipse Ankaios",
+      topics+: [
+        "ankaios",
+        "automotive",
+        "iot",
+        "containers",
+        "orchestration",
+        "yocto",
+        "embedded-linux"
+      ],
+      web_commit_signoff_required: false,
+      rulesets: [
+        orgs.newRepoRuleset('main_protection') {
+          allows_creations: true,
+          include_refs+: [
+            "~DEFAULT_BRANCH"
+          ],
+          required_pull_request+: {
+            required_approving_review_count: 1,
+            requires_review_thread_resolution: true,
+          },
+          required_status_checks+: {
+            do_not_enforce_on_create: true,
+            status_checks+: [
+              "Lint recipes"
+            ],
+          },
+        },
+      ],
+    },
   ],
 } + {
   # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
