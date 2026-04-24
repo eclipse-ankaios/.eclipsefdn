@@ -231,6 +231,19 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
 } + {
   # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
   _repositories+:: [
-    orgs.newRepo('.github')
+    orgs.newRepo('.github') {
+      rulesets: [
+        orgs.newRepoRuleset('main_protection') {
+          allows_creations: true,
+          include_refs+: [
+            "~DEFAULT_BRANCH"
+          ],
+          required_pull_request+: {
+            required_approving_review_count: 1,
+            requires_review_thread_resolution: true,
+          },
+        },
+      ],
+    }
   ],
 }
