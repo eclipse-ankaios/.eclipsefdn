@@ -130,8 +130,10 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
       topics+: [
         "ankaios",
         "automotive",
+        "iot",
         "containers",
-        "orchestration"
+        "orchestration",
+        "rust"
       ],
       web_commit_signoff_required: false,
       rulesets: [
