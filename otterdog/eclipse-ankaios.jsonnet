@@ -192,6 +192,11 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
           deployment_branch_policy: "selected",
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.ankaios/sonarcloud.io/token-ankaios",
+        },
+      ],
     },
     orgs.newRepo('meta-ankaios') {
       allow_merge_commit: true,
