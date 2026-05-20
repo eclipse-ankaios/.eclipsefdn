@@ -72,6 +72,11 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
         },
         orgs.newEnvironment('pypi'),
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.ankaios/sonarcloud.io/token-ankaios",
+        },
+      ],
     },
     orgs.newRepo('ank-sdk-rust') {
       allow_merge_commit: true,
@@ -113,6 +118,11 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
             "gh-pages"
           ],
           deployment_branch_policy: "selected",
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.ankaios/sonarcloud.io/token-ankaios",
         },
       ],
     },
