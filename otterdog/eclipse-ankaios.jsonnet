@@ -226,7 +226,7 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
           required_status_checks+: {
             do_not_enforce_on_create: true,
             status_checks+: [
-              "Lint recipes"
+              "Lint recipes / Recipe lint"
             ],
           },
         },
