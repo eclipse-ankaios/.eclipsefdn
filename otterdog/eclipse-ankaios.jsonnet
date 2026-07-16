@@ -230,6 +230,25 @@ orgs.newOrg('automotive.ankaios', 'eclipse-ankaios') {
             ],
           },
         },
+        orgs.newRepoRuleset('release_branch_protection') {
+          allows_creations: true,
+          include_refs+: [
+            "refs/heads/kirkstone",
+            "refs/heads/scarthgap",
+            "refs/heads/whinlatter",
+            "refs/heads/wrynose"
+          ],
+          required_pull_request+: {
+            required_approving_review_count: 1,
+            requires_review_thread_resolution: true,
+          },
+          required_status_checks+: {
+            do_not_enforce_on_create: true,
+            status_checks+: [
+              "Recipe lint"
+            ],
+          },
+        },
       ],
     },
     orgs.newRepo('ankaios-yocto-demo') {
